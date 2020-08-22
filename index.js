@@ -19,14 +19,10 @@ app.get('/', (req, res) => {
 app.get('/bot/stats', (req, res) => {
     return res.json({
         inServers: client.guilds.cache.size,
-    })
-})
-
-app.get('/bot/memberCount', (req, res) => {
-    return res.json({
         memberCount: client.users.cache.size,
     })
 })
+
 app.listen(config.API_PORT, () => {
     console.log('Starting the backend...')
 })
