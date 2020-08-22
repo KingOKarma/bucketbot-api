@@ -22,6 +22,11 @@ app.get('/bot/stats', (req, res) => {
     })
 })
 
+app.get('/bot/stats', (req, res) => {
+    return res.json({
+        memberCount: client.users.cache.size,
+    })
+})
 app.listen(config.API_PORT, () => {
     console.log('Starting the backend...')
 })
