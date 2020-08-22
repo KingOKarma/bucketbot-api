@@ -22,7 +22,7 @@ app.get('/bot/stats', (req, res) => {
     })
 })
 
-app.get('/bot/stats', (req, res) => {
+app.get('/bot/memberCount', (req, res) => {
     return res.json({
         memberCount: client.users.cache.size,
     })
