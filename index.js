@@ -20,7 +20,8 @@ app.get('/bot/stats', (req, res) => {
     return res.json({
         inServers: client.guilds.cache.size,
         memberCount: client.users.cache.size,
-        supportCount: client.guilds.cache.find(guild => guild.id === "605859550343462912").memberCount
+        supportCount: client.guilds.cache.find(guild => guild.id === "605859550343462912").memberCount,
+        uptime: client.uptime,
     })
 })
 
