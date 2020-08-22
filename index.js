@@ -5,6 +5,13 @@ const config = require('dotenv').config().parsed;
 const client = new Discord.Client();
 const app = express();
 
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+
+    next();
+})
+
 app.get('/', (req, res) => {
     return res.send('Bucketbot API');
 })
