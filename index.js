@@ -23,8 +23,7 @@ totalSeconds %= 86400;
 let hours = Math.floor(totalSeconds / 3600);
 totalSeconds %= 3600;
 let minutes = Math.floor(totalSeconds / 60);
-let seconds = Math.floor(totalSeconds % 60);
-let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`;
+let uptime = `${days}d/${hours}h/${minutes}m`;
 
 
 app.get('/bot/stats', (req, res) => {
