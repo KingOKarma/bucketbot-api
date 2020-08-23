@@ -1,6 +1,7 @@
 const express = require('express')
 const Discord  = require('discord.js');
 const config = require('dotenv').config().parsed;
+const ms = require('ms')
 
 const client = new Discord.Client();
 const app = express();
@@ -17,21 +18,15 @@ app.get('/', (req, res) => {
 })
 
 
-let totalSeconds = (client.uptime / 1000);
-let days = Math.floor(totalSeconds / 86400);
-totalSeconds %= 86400;
-let hours = Math.floor(totalSeconds / 3600);
-totalSeconds %= 3600;
-let minutes = Math.floor(totalSeconds / 60);
-let uptime = `${days}d/${hours}h/${minutes}m`;
-
 
 app.get('/bot/stats', (req, res) => {
+    
+
     return res.json({
         inServers: client.guilds.cache.size,
         memberCount: client.users.cache.size,
         supportCount: client.guilds.cache.find(guild => guild.id === "605859550343462912").memberCount,
-        uptime: uptime,
+        uptime: ms(client.uptime, {long: true})
     })
 })
 
