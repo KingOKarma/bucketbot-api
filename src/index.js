@@ -8,6 +8,9 @@ const app = express();
 const passport = require('passport');
 const session = require('express-session')
 const discordStrategy = require("./routes/stratagies/discordstrategy");
+const db = require('./database/database');
+
+db.then(() => console.log('Connected to MongoDB.')).catch(err => console.log(err))
 
 //Routes
 const authRoute = require('./routes/auth');
