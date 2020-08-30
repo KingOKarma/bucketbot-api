@@ -1,7 +1,6 @@
 const DiscordStrategy = require("passport-discord").Strategy;
 const passport = require('passport');
 const DiscordUser = require('../../models/DiscordUser');
-const DiscordUser = require("../../database/database");
 
 passport.serializeUser((user, done) => {
     done(null, user.id);
