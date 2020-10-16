@@ -1,0 +1,17 @@
+{
+    "expressPort": 8080,
+    "mongoUrl": "mongodb://localhost/bucket-bot",
+    "discord": {
+        "token": "",
+        "oAuth": {
+            "clientID": "",
+            "clientSecret": "",
+            "redirectURL": "",
+            "scopes": [
+                "identify",
+                "email",
+                "guilds"
+            ]
+        }
+    }
+}
